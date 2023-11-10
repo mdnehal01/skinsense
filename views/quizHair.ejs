@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/hair.css">
+</head>
+<body>
+    <form action="/predictHair" method="post" id="valueForm">
+
+    <div class="quiz-section1">
+        <div class="quiz-box">
+            <br><br><br>
+            <strong style="font-size: 25px;">Welcome to hair Care Section</strong>
+            <br><br>
+            What is your Name?
+            <br><br>
+            <input type="text" name="name">
+            <br>
+            Age?
+                    <select name="age" id="select">
+
+                        <% for(let i=15; i<=99; i++){ %>
+                            <option value="<%= i %>"><%= i %></option>
+                        <% } %>
+
+                    </select>
+
+                <br><br><br>
+
+                    What is your Gender?
+                    <div class="containern">
+                        <input type="radio" name="gender" value="1" class="male" id="male" checked>
+                        <label for="male">Male</label>
+
+	                    <input type="radio" name="gender" value="0" class="female" id="female">
+                        <label for="female">Female</label>
+                    </div>
+        </div>
+        <div class="footer1">
+            <a class="next" onclick="ques2()">Next</a>
+        </div>
+    </div>
+
+    <!-- ///////////////////// -->
+
+    <div class="quiz-section2">
+        <div class="quiz-box"><br><br><br><br><br><br><br><br><br>
+            Do you currently have Dandruff?
+            <div class="containern">
+                <input type="radio" name="dandruff" value="1" class="male" id="dandruffyes">
+                <label for="dandruffyes">Yes</label>
+
+                <input type="radio" name="dandruff" value="0" class="female" id="dandruffno">
+                <label for="dandruffno">No</label>
+            </div>
+        </div>
+        <div class="footer">
+            <a class="next" onclick="ques1()">Previous</a>
+            <a class="next" onclick="ques3()">Next1</a>
+        </div>
+    </div>
+
+
+    <!-- /////////////////////////////////////////// -->
+
+    <div class="quiz-section3">
+        <div class="quiz-box"><br><br><br><br><br><br><br>
+            What is your Hair Type?
+            <div class="containern">
+                <input type="radio" name="hairType" value="1, 0, 0" id="hairCurvy">
+                <label for="hairCurvy">Curvy</label>
+                <br><br>
+                <input type="radio" name="hairType" value="0, 1, 0" id="hairStraight">
+                <label for="hairStraight">Straight</label>
+                <br><br>
+                <input type="radio" name="hairType" value="0, 0, 1" id="hairWavy">
+                <label for="hairWavy">Wavy</label>
+            </div>
+            <!-- <button>sub</button> -->
+        </div>
+        <div class="footer">
+            <a class="next" onclick="ques2()">Previous</a>
+            <a class="next" onclick="ques4()">Next2</a>
+        </div>
+    </div>
+
+    <div class="quiz-section4">
+        <div class="quiz-box"><br><br><br><br><br><br><br>
+            Hair Thickness?
+            <div class="containern">
+                <input type="radio" name="thickness" value="0, 0, 1" id="hairThin">
+                <label for="hairThin">Thin</label>
+                <br><br>
+                <input type="radio" name="thickness" value="1, 0, 0" id="hairNormal">
+                <label for="hairNormal">Normal</label>
+                <br><br>
+                <input type="radio" name="thickness" value="0, 1, 0" id="hairThick">
+                <label for="hairThick">Thick</label>
+            </div>
+        </div>
+        <div class="footer">
+            <a class="next" onclick="ques3()">Previous</a>
+            <a class="next" onclick="ques5()">Next3</a>
+        </div>
+    </div>
+
+    <div class="quiz-section5">
+        <div class="quiz-box">
+            <br><br><br><br><br><br><br>
+            Hair Volume?
+            <div class="containern">
+                <input type="radio" name="volume" value="1, 0, 0" id="volumeLow">
+                <label for="volumeLow">Low</label>
+                <br><br>
+                <input type="radio" name="volume" value="0, 1, 0" id="volumeMod">
+                <label for="volumeMod">Moderate</label>
+                <br><br>
+                <input type="radio" name="volume" value="0, 0, 1" id="volumeVol">
+                <label for="volumeVol">Volumized</label>
+            </div>
+        </div>
+        <div class="footer">
+            <a class="next" onclick="ques4()">Previous</a>
+            <a class="next" onclick="ques6()">Next4</a>
+        </div>
+    </div>
+
+    <div class="quiz-section6">
+        <div class="quiz-box">
+            <br><br><br><br><br><br><br>
+            How does your scalp feel during night?
+            <div class="containern">
+                <input type="radio" name="scalp" value="1, 0, 0, 0, 0" id="scalp1">
+                <label for="scalp1">Dry</label>
+                <br><br>
+                <input type="radio" name="scalp" value="0, 0, 0, 1, 0" id="scalp4">
+                <label for="scalp4">Very Dry</label>
+                <br><br>
+                <input type="radio" name="scalp" value="0, 0, 1, 0, 0" id="scalp3">
+                <label for="scalp3">Oily</label>
+                <br><br>
+                <input type="radio" name="scalp" value="0, 0, 0, 0, 1" id="scalp5">
+                <label for="scalp5">Very Oily</label>
+                <br><br>
+                <input type="radio" name="scalp" value="0, 1, 0, 0, 0" id="scalp2">
+                <label for="scalp2">Neither</label>
+                <br><br>
+            </div>
+        </div>
+        <div class="footer">
+            <a class="next" onclick="ques5()">Previous</a>
+            <a class="next" onclick="ques7()">Next5</a>
+        </div>
+    </div>
+
+    <!-- /////////////////////////00 -->
+    <div class="quiz-section7">
+        <div class="quiz-box">
+            <br><br><br><br><br><br><br>
+            Currently suffering hair loss? (How much hair falls in each combing?)
+            <div class="containern">
+                
+                <input type="radio" name="loss" value="0, 1, 0" id="loss2">
+                <label for="loss2">Few</label>
+                <br><br>
+                <input type="radio" name="loss" value="1, 0, 0" id="loss1">
+                <label for="loss1">Less than a Dozen</label>
+                <br><br>
+                <input type="radio" name="loss" value="0, 0, 1" id="loss3">
+                <label for="loss3">More than a dozen</label>
+            </div>
+        </div>
+        <div class="footer">
+            <a class="next" onclick="ques6()">Previous</a>
+            <a class="next" onclick="ques8()">Next6</a>
+        </div>
+    </div>
+
+    <!-- /////////////////////////////////////// -->
+
+    <div class="quiz-section8">
+        <div class="quiz-box">
+            <br><br><br><br><br><br><br>
+            Took any medication since last year after which you noticed hairfall?
+            <div class="containern">
+                
+                <input type="radio" name="medication" value="1, 0, 0" id="medication1">
+                <label for="medication1">No</label>
+                <br><br>
+                <input type="radio" name="medication" value="0, 1, 0" id="medication2">
+                <label for="medication2">Not Sure</label>
+                <br><br>
+                <input type="radio" name="medication" value="0, 0, 1" id="medication3">
+                <label for="medication3">Yes</label>
+            </div>
+        </div>
+        <div class="footer">
+            <a class="next" onclick="ques7()">Previous</a>
+            <a class="next" onclick="ques9()">Next7</a>
+        </div>
+    </div>
+
+
+    <!-- ///////////////////////////// -->
+    <div class="quiz-section9">
+        <div class="quiz-box">
+            <br><br><br><br><br><br><br>
+            How much your hair exposed to SUN and POLLUTION on a daily basis?
+            <div class="containern">
+                
+                <input type="radio" name="exposed" value="0, 1, 0" id="exposed2">
+                <label for="exposed2">Not Exposed</label>
+                <br><br>
+                <input type="radio" name="exposed" value="1, 0, 0" id="exposed1">
+                <label for="exposed1">Less Exposed</label>
+                <br><br>
+                <input type="radio" name="exposed" value="0, 0, 1" id="exposed3">
+                <label for="exposed3">Very Exposed</label>
+            </div>
+        </div>
+        <div class="footer">
+            <a class="next" onclick="ques8()">Previous</a>
+            <a class="next" onclick="ques10()">Next8</a>
+        </div>
+    </div>
+
+
+    <div class="quiz-section10">
+        <div class="quiz-box">
+            <br><br><br><br><br><br><br>
+            What you want to focus for right now? (Select any two) <br>
+            
+            <input type="checkbox" name="values" value="Daily Maintenance"> Daily Maintenance
+            <br>
+            <input type="checkbox" name="values" value="Oil Control"> Oil Control
+            <br>
+            <input type="checkbox" name="values" value="More Volume"> More Volume
+            <br>
+            <input type="checkbox" name="values" value="Softness And Shine"> Softness And Shine
+    
+            
+        </div>
+        <div class="footer">
+            <a class="next" onclick="ques9()">Previous</a>
+            <button class="submit next" style="border: none;">SUB</button>
+        </div>
+    </div>
+    </form>
+
+    <div class="alert">Only 2 selection allowed
+        <button class="btn" style="height: 20px;width: 20px; position: absolute; top:-10px; right: -10px; border:none; background-color: red; cursor: pointer; border-radius: 1000px; color: white;" onclick="hideAlert()">x</button>
+    </div>
+    <script src="/js/hair.js"></script>
+</body>
+</html>

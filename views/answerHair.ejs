@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .col-sm-7, .col-sm-5{
+            float: left;
+            padding: 15px 0px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .mn{
+            border:none;
+            padding: 20px;
+            height: 15%;
+            width: auto;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            border: 1px solid #A80038;
+
+        }
+        .col-sm-7{
+            justify-content: center;
+        }
+        
+        .col-sm-7 img{
+            padding: 0px 5px;
+        }
+
+        .col-sm-5{
+            padding: 80px 100px 0px ;
+            justify-content: end;
+        }
+
+        .knowSkin{
+            background-color: #A80038;
+            height: 45px;
+            width: 150px;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            transition: 0.3s ease;
+        }
+
+        .knowSkin:hover{
+            background-color: #FD0054;
+            border-radius: 100px;
+        }
+
+        .answer{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    transition: 0.8s ease-in-out;
+    transition-delay: .25s;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.completion1{
+    background-color: green;
+    height: 100%;
+    width: 100%;
+}
+
+.progress-bar1{
+    height: 1%;
+    width: 50%;
+    border: 1px solid black;
+    position: absolute;
+    top: 60px;
+}
+
+.box{
+    width: 50%;
+    height: auto;
+    padding: 30px;
+    /* border: 3px solid #367229; */
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 50px;
+}
+
+
+    </style>
+</head>
+<body>
+    <%- include('header2') %>
+
+    <!-- <section class="answer">
+        <div class="mn">
+            Hair Damage: <%= resultH %>
+            <br>
+            Scalp Damage: <%= resultScalp %>
+        </div>
+
+        <img src='/images/SerumHair.png' height=400px>
+    </section>
+    <script src="/js/index.js"></script> -->
+    
+    <div class="box"><center>
+        <h3 style="color: grey; display: inline;">Here is your result:</h3><h3 style="display: inline; font-weight: 400; color: #99B080;"> <%= name %> </h3></center>
+    </div>
+    <div class="mn">
+        Hair Damage: <%= resultH %>
+        <br>
+        Scalp Damage: <%= resultScalp %>
+        <br>
+        Product: <%= product %>
+    </div>
+    
+    <table style="text-align: center;border:none;margin-left: 50%; transform: translateX(-50%);">
+        <tr>
+            <td style="border:none"><span style="font-size: 30px; color: #5d6b4d;">Hair Oil</span><br>
+                Coconut Oil <br>
+                Jojoba Oil <br>
+                
+            </td>
+            <td style="border:none"><img src='/images/HairOil.png' height=400px></td>
+        </tr>
+        <tr>
+            <td style="border:none"><span style="font-size: 30px; color: #5d6b4d;">Hair Serum</span><br>
+                Argan Oil <br>
+                Keratin <br>
+                Hyaluronic Acid
+            </td>
+            <td style="border:none"><img src="/images/SerumHair.png" alt="" height="400px"></td>
+        </tr>
+        <tr> 
+            <td style="border:none"><span style="font-size: 30px; color: #5d6b4d;">Hair Shampoo</span><br>
+                Biotin <br>
+                Keratin <br>
+                Aloevera
+            </td>
+            <td style="border:none"><img src="/images/Shampoo.png" height="400px" alt=""></td>
+        </tr>
+    </table>
+
+    <script src="/js/index.js"></script>
+</body>
+</html>

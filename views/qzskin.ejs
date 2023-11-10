@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('header2') %>
+    <section class="quiz-section">
+        
+        <form action="/predict" method="post">
+
+        <div class="quiz-box">
+            <h1>Know your Skin</h1>
+            <div class="quiz-header">
+                <span>Quiz website</span>
+                <h3 class="question-text">What is your name?</h3>
+                
+                    <input type="text" name="name"/>
+
+                    <br>
+                    <h3 style="margin-top: 30px; display: inline;">Age?</h3>
+                    <select name="age" id="select">
+
+                        <% for(let i=15; i<=99; i++){ %>
+                            <option value="<%= i %>"><%= i %></option>
+                        <% } %>
+
+                    </select>
+
+
+                    <h3 style="margin-top: 30px;">What is your Gender?</h3>
+                    <div class="containern">
+                        <input type="radio" name="gender" value="1" class="male" id="male" checked>
+                        <label for="male">Male</label>
+
+	                    <input type="radio" name="gender" value="0" class="female" id="female">
+                        <label for="female">Female</label>
+                    </div>
+                    <br>
+                    
+                
+            </div>
+            <div class="quiz-footer"><a class="next-btn" onclick="nextQuiz()">Next</a></div>
+        </div>
+
+        <br><br><br>
+
+        <div class="quiz-box1">
+            <div class="quiz-header">
+
+                    <h3>Current Issues?</h3>
+                    <div class="containern">
+                        <input type="radio" name="concerns" value="1" class="male" id="tan" checked>
+                        <label for="tan">Color, Tone or Blemishes</label>
+
+	                    <input type="radio" name="concerns" value="0" class="female" id="acne">
+                        <label for="acne">Acne</label>
+                    </div>
+                    <br>
+                    
+            </div>
+            <div class="quiz-footer"><a class="next-btn" onclick="nextQuiz1()">Next</a></div>
+        </div>
+
+        <div class="quiz-box2">
+            <div class="quiz-header">
+
+                    <h3>Are you currently having Dark Patches?</h3>
+                    <div class="containern">
+                        <input type="radio" name="darkPatches" value="1" class="male" id="Morethan5" checked>
+                        <label for="Morethan5">More Than 5</label>
+
+	                    <input type="radio" name="darkPatches" value="0" class="female" id="lessThan5">
+                        <label for="lessThan5">No/Less than 5</label>
+                    </div>
+                    <br>
+                    
+                    <!-- <button>SUBMIT</button> -->
+            </div>
+            <div class="quiz-footer"><a class="next-btn" onclick="nextQuiz2()">Next</a></div>
+        </div>
+
+
+        <div class="quiz-box3">
+            <div class="quiz-header">
+
+                    <h3>How much Dark Spots you currently have?</h3>
+                    <div class="containern">
+                        <input type="radio" name="darkSpots" value="0" class="male" id="More" checked>
+                        <label for="More">Deep/More Than 5</label>
+
+	                    <input type="radio" name="darkSpots" value="1" class="female" id="less">
+                        <label for="less">No/Less than 5</label>
+                    </div>
+                    <br>
+                    <!-- <a class="next-btn" onclick="nextQuiz3()">Next</a> -->
+                    <!-- <button>SUBMIT</button> -->
+            </div>
+            <div class="quiz-footer"><a class="next-btn" onclick="nextQuiz3()">Next</a></div>
+        </div>
+
+        <div class="quiz-box4">
+            <div class="quiz-header">
+
+                    <h3>Are you currently Tanned?</h3>
+                    <div class="containern">
+                        <input type="radio" name="tanned" value="1" class="male" id="tanyes" checked>
+                        <label for="tanyes">Yes</label>
+
+	                    <input type="radio" name="tanned" value="0" class="female" id="tanno">
+                        <label for="tanno">No</label>
+                    </div>
+                    <br>
+                    <!-- <a class="next-btn" onclick="nextQuiz4()">Next</a> -->
+                    <!-- <button>SUBMIT</button> -->
+            </div>
+            <div class="quiz-footer"><a class="next-btn" onclick="nextQuiz4()">Next</a></div>
+        </div>
+
+        <div class="quiz-box5">
+            <div class="quiz-header">
+
+                    <h3>Fine Lines?</h3>
+                    <div class="containern">
+                        <input type="radio" name="fineLine" value="0" class="male" id="fineLine" checked>
+                        <label for="fineLine">Deep</label>
+
+	                    <input type="radio" name="fineLine" value="1" class="female" id="fineLineNo">
+                        <label for="fineLineNo">No/Few</label>
+                    </div>
+                    <br>
+                    <!-- <a class="next-btn" onclick="nextQuiz5()">Next</a> -->
+                    <!-- <button>SUBMIT</button> -->
+            </div>
+            <div class="quiz-footer"><a class="next-btn" onclick="nextQuiz5()">Next</a></div>
+        </div>
+
+        <div class="quiz-box6">
+            <div class="quiz-header">
+
+                    <h3>Do you currently have wrinkles?</h3>
+                    <div class="containern">
+                        <input type="radio" name="wrinkles" value="1" class="male" id="wrinklesYes" checked>
+                        <label for="wrinklesYes">Yes/Deep</label>
+
+	                    <input type="radio" name="wrinkles" value="0" class="female" id="wrinklesNo">
+                        <label for="wrinklesNo">No/Few</label>
+                    </div>
+                    <br>
+                    <!-- <a class="next-btn" onclick="nextQuiz6()">Next</a> -->
+                    <!-- <button>SUBMIT</button> -->
+            </div>
+            <div class="quiz-footer"><a class="next-btn" onclick="nextQuiz6()">Next</a></div>
+        </div>
+
+        <div class="quiz-box7">
+            <div class="quiz-header">
+
+                    <h3>Do you currently have beards?</h3>
+                    <div class="containern">
+                        <input type="radio" name="beards" value="1" class="male" id="beards" checked>
+                        <label for="beards">Yes</label>
+
+	                    <input type="radio" name="beards" value="0" class="female" id="beardsNo">
+                        <label for="beardsNo">No</label>
+                    </div>
+                    <br>
+                    <!-- <a class="next-btn" onclick="nextQuiz7()">next</a> -->
+                    <!-- <button class="button" onclick="full()">SUBMIT</button> -->
+            </div>
+            <div class="quiz-footer"><button class="button" onclick="full()">SUBMIT</button> </div>
+        </div>
+        </form>
+  </section>
+
+
+  <script src="/js/index.js"></script>
+</body>
+</html>
