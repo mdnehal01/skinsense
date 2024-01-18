@@ -115,8 +115,6 @@ app.post('/signup', async function(req, res){
             await client.close();
         }
     }
-    "express");
-    const bodyParser = require("body-parser"
     await run().catch(console.dir);
 });
 
