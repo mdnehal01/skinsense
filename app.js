@@ -5,34 +5,6 @@ let {PythonShell} = require('python-shell')
 
 
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const url = "mongodb+srv://mdnehalakhlaque43:nehal@clusteribm.mj2pthi.mongodb.net/?retryWrites=true&w=ma.net/?retryWrites=true&w=jority";
-
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(url, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
-});
-
-async function run() {
-  try {
-    // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
-}
-run().catch(console.dir);
-
-  
-
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -57,66 +29,6 @@ app.get("/quizHair", function(req, res){
 app.get("/login", function(req, res){
     res.render('login')
 })
-
-
-app.get("/signup", function(req, res){
-    res.render('signup')
-})
-
-
-app.post('/signup', async function(req, res){
-
-    const data = req.body;
-    console.log(data)
-
-    const dbName = "UserData";  pyshell.end(function (err,code,signal) {
-        if (err) throw err;
-        console.log('The exit code was: ' + code);
-        console.log('The exit signal was: ' + signal);
-        console.log('finished');
-      });
-        
-    });
-    
-
-    async function run() {
-        try {
-            // Connect to the Atlas cluster
-            await client.connect();
-            const db = client.db(dbName);
-
-            // Reference the "signup" collection in the specified database
-            const col = db.collection("signup");
-
-            // Check if the email already exists
-            const existingUser = await col.findOne({ "Email": data.email });
-
-            if (existingUser) {
-                // Email already exists, reject signup
-                console.log("User with this email already exists.");
-                 // You can render a rejection page or redirect as needed
-            } else {
-                // Create a new document
-                let personDocument = {
-                    "Name": data.name,
-                    "Age":data.age,
-                    "Email": data.email,
-                    "Password": data.password,
-                };
-
-                // Insert the document into the specified collection
-                const result = await col.insertOne(personDocument);
-                console.log("User registered successfully:", result.insertedId);
-                res.render("indexLogin");
-            }
-        } catch (err) {
-            console.log(err.stack);
-        } finally {
-            await client.close();
-        }
-    }
-    await run().catch(console.dir);
-});
 
 
 
