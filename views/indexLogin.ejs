@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .col-sm-7, .col-sm-5, .col-sm-6{
+            float: left;
+            padding: 15px 0px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .col-sm-7{
+            justify-content: center;
+        }
+        
+        .col-sm-7 img{
+            padding: 0px 5px;
+        }
+
+        .col-sm-5{
+            padding: 80px 90px 0px ;
+            justify-content: end;
+        }
+
+        
+        .knowSkin{
+            background-color: #748E63;
+            height: 45px;
+            width: 150px;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            transition: 0.3s ease;
+        }
+
+        .knowSkin:hover{
+            background-color: #99B080;
+            border-radius: 100px;
+        }
+
+        #section2{
+          background-color: #99B080;
+        }
+    </style>
+</head>
+<body>
+    <%- include('header') %>
+
+    LOGGED IN
+    <div id="carouselExampleFade" class="carousel slide carousel-slide">
+        <div class="carousel-inner">
+          <div class="carousel-item">
+            <div class="col-sm-5">
+                <h1>Experience the Secret to Radiant, Healthy Skin with Your Personalized Skincare Plan!</h1>
+                <button class="knowSkin" style="color:white;" onclick="window.location.href='/quizSkin'">Analyze Skin</button>
+            </div>
+            <div class="col-sm-7" style="background-color: #748E63;">
+                <img src="/images/image1.png" width="24%" alt="Hey">
+                <img src="/images/face2.png" width="24%" alt="Hey">
+                <img src="/images/face3.png" width="24%" alt="Hey">
+                <img src="/images/face4.png" width="24%" alt="Hey">
+            </div>
+          </div>
+          <div class="carousel-item active">
+            <div class="col-sm-5">
+                <h1>Unlock vibrant, healthy hair through a tailored, personalized haircare plan today!</h1>
+                <button class="knowSkin" style="color:white;" onclick="window.location.href='/quizHair'">Analyze Hair</button>
+            </div>
+            <div class="col-sm-7" style="background-color: #748E63;">
+                <img src="/images/Hair1.png" width="24%" alt="Hey">
+                <img src="/images/Hair2.png" width="24%" alt="Hey">
+                <img src="/images/hair2.png" width="24%" alt="Hey">
+                <img src="/images/Hair4.png" width="24%" alt="Hey">
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+    <section id="free">
+        <h1 style="color: #748E63; font-size: 4vw;">FREE!</h1>
+        <h2 style="color: #2e2e2e; font-size: 3.4vw;">Serum with every order <br> above &#8377;999/-</h2>
+        <h3 style="color: #48573d; font-size: 3vw;">Get your customized product here.</h3>
+    </section>
+    <section id="footer">
+        <div class="col-sm-6">
+          <h1 style="color: #48573d;">"Uniquely crafted beauty solutions tailored for your skin type, celebrating your individuality for glowing, healthy skin."</h1>
+          <h6 style="color: #2e2e2e;">Tailored Formulas</h6> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+          <button class="knowSkin" style="color:white;" onclick="window.location.href='/quizSkin'">Analyze Skin</button>&nbsp;&nbsp;
+          <button class="knowSkin" style="color:white;" onclick="window.location.href='/quizHair'">Analyze Hair</button>
+
+        </div>
+        <div class="col-sm-6">
+          <img src="/images/face5.png" alt="">
+        </div>
+    </section>
+
+
+    <section id="section2"></section>
+
+
+    <script>
+        window.watsonAssistantChatOptions = {
+          integrationID: "ed018663-d5c2-4232-b6da-ecd5bd3710d5", // The ID of this integration.
+          region: "au-syd", // The region your integration is hosted in.
+          serviceInstanceID: "ee4082c7-5844-4a2e-9656-112ec083c20b", // The ID of your service instance.
+          onLoad: function(instance) { instance.render(); }
+        };
+        setTimeout(function(){
+          const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+          document.head.appendChild(t);
+        });
+      </script>
+</body>
+</html>
+               

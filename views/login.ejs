@@ -1,0 +1,13 @@
+<%- include('header') %>
+
+<div class="login-box" style="display: flex; justify-content: center;align-items: center; height: 500px; width: 500px; background-color: rgb(215, 250, 222); flex-direction: column;margin-top: 50%; margin-left: 50%; transform: translate(-50%, -125%);">
+    <h6>Don't have an account? <a href="/signup">Sign Up</a> </h6>
+    <form action="/login" method="post">
+        <input type="email" placeholder="E-mail" name="email" id="signup-input">
+        <br><br>
+        <input type="password" placeholder="Password" name="password" id="signup-input">
+        <br>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+</div>

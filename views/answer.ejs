@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .col-sm-7, .col-sm-5{
+            float: left;
+            padding: 15px 0px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .col-sm-7{
+            justify-content: center;
+        }
+        
+        .col-sm-7 img{
+            padding: 0px 5px;
+        }
+
+        .col-sm-5{
+            padding: 80px 100px 0px ;
+            justify-content: end;
+        }
+
+        .knowSkin{
+            background-color: #A80038;
+            height: 45px;
+            width: 150px;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            transition: 0.3s ease;
+        }
+
+        .knowSkin:hover{
+            background-color: #FD0054;
+            border-radius: 100px;
+        }
+
+        .answer{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    transition: 0.8s ease-in-out;
+    transition-delay: .25s;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.completion1{
+    background-color: green;
+    height: 100%;
+    width: 100%;
+}
+
+.progress-bar1{
+    height: 1%;
+    width: 50%;
+    border: 1px solid black;
+    position: absolute;
+    top: 60px;
+}
+
+    </style>
+</head>
+<body onload="full()">
+    <%- include('header2') %>
+    <section class="answer">
+        <%= result %>
+        <img src='<%= imagewa %>' height=200px>
+    </section>
+    <script src="/js/index.js"></script>
+</body>
+</html>
